@@ -94,6 +94,7 @@ Vagrant.configure(2) do |config|
 
     su -c 'lxc remote add images images.linuxcontainers.org' vagrant
     lxc config profile create twoNets
+    lxc config profile device add twoNets eth0 nic parent=lxcbr0 nictype=bridged
     lxc config profile device add twoNets eth1 nic parent=lxcbr0 nictype=bridged
   SHELL
 end
