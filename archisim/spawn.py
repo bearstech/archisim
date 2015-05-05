@@ -32,5 +32,7 @@ for vm, info in list_vm().items():
     lxc.file.push('--uid=1', '--gid=1', 'interfaces.tmp',
                   '%s/etc/network/interfaces' % vm)
     lxc('exec', vm, 'ifup', 'eth1')
+    lxc.file.push('bootstrap.sh', '%s/tmp/bootstrap.sh' % vm)
+    lxc('exec', vm, '/bin/sh', '/tmp/bootstrap.sh')
 
 print list_vm()
