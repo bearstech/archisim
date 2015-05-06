@@ -77,9 +77,10 @@ Vagrant.configure(2) do |config|
   #   sudo apt-get install -y apache2
   # SHELL
   config.vm.provision "shell", inline: <<-SHELL
-    sudo apt-get update
-    sudo apt-get install -y lxd
-    service lxd start
+    apt-get update
+    apt-get install -y lxd
+    apt-get install -y python-sh python-yaml python-jinja2
+    service lxd restart
     adduser vagrant lxd
     #
     # Chef is just boring
