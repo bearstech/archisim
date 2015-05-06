@@ -98,5 +98,8 @@ Vagrant.configure(2) do |config|
     lxc config profile create twoNets
     lxc config profile device add twoNets eth0 nic parent=lxcbr0 nictype=bridged
     lxc config profile device add twoNets eth1 nic parent=lxcbr0 nictype=bridged
+
+    #Fake private network
+    route add -net 192.168.99.0 netmask 255.255.255.0 lxcbr0
   SHELL
 end
