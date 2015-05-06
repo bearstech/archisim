@@ -91,6 +91,7 @@ Vagrant.configure(2) do |config|
 
     apt-get autoremove -y
 
+    su -c 'ssh-keygen -t ecdsa -N "" -f /home/vagrant/.ssh/id_ecdsa' vagrant
     sleep 10
 
     su -c 'lxc remote add images images.linuxcontainers.org' vagrant
