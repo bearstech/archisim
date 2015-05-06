@@ -21,6 +21,10 @@ Spawn some VM :
 
     ./spawn.py alpha beta gamma
 
+List them :
+
+    lxc list
+
 Test them
 
     ssh root@beta
