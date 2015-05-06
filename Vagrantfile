@@ -80,7 +80,7 @@ Vagrant.configure(2) do |config|
     apt-get update
     apt-get install -y lxd
     apt-get install -y python-sh python-yaml python-jinja2
-    service lxd restart
+    service lxd start
     adduser vagrant lxd
     #
     # Chef is just boring
