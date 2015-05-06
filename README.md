@@ -28,3 +28,11 @@ List them :
 Test them
 
     ssh root@beta
+
+Install ping (the Debian is naked) :
+
+    apt-get install iputils-ping
+
+Ping some friends :
+
+    ping alpha
