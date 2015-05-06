@@ -4,6 +4,7 @@ import sys
 from jinja2 import Environment, FileSystemLoader
 from sh import lxc, sudo, ssh_keygen
 import time
+import os.path
 
 
 def list_vm():
@@ -19,7 +20,8 @@ for vm in sys.argv[1:]:
     if vm in vms:
         lxc.delete(vm)
 
-    ssh_keygen('-f', "/home/vagrant/.ssh/known_hosts", '-R', vm)
+    if os.path.exists('home/vagrant/.ssh/known_hosts'):
+        ssh_keygen('-f', "/home/vagrant/.ssh/known_hosts", '-R', vm)
     lxc.launch('images:debian/wheezy/amd64', vm, '-p', 'twoNets')
 
 time.sleep(10)
