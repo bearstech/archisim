@@ -36,3 +36,8 @@ Install ping (the Debian is naked) :
 Ping some friends :
 
     ping alpha
+
+Licence
+-------
+
+3 Terms BSD Licence © 2015 Mathieu Lecarme
