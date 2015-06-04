@@ -22,7 +22,7 @@ for vm in sys.argv[1:]:
 
     if os.path.exists('home/vagrant/.ssh/known_hosts'):
         ssh_keygen('-f', "/home/vagrant/.ssh/known_hosts", '-R', vm)
-    lxc.launch('images:debian/wheezy/amd64', vm, '-p', 'twoNets')
+    lxc.launch('images:debian/jessie/amd64', vm, '-p', 'twoNets')
 
 time.sleep(10)
 print list_vm()
